@@ -1,0 +1,14 @@
+:root {
+  --accent-1: greenyellow;
+  --accent-2: blueviolet;
+  --background: #101010;
+  --background-alt: #121212;
+  --border-neutral: #303030;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  color: #e0e0f0;
+}
