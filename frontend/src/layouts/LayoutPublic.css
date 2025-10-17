@@ -4,6 +4,8 @@
   --background: #101010;
   --background-alt: #121212;
   --border-neutral: #303030;
+
+  background-color: var(--background-alt);
 }
 
 #root {
