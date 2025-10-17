@@ -2,7 +2,7 @@ div.box-disclaimer {
     background-color: crimson;
     color: #111;
     padding: 30px 20px;
-    margin: 40px;
+    margin-block: 40px;
     border-radius: 6px;
     text-align: justify;
 
