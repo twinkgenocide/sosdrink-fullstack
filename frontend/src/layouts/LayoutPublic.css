@@ -12,3 +12,13 @@
   background-color: var(--background);
   color: #e0e0f0;
 }
+
+div.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
