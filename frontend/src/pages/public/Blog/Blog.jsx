@@ -22,7 +22,7 @@ function BlogDisplay(props) {
 }
 
 export function Blog() {
-    let params = useParams();
+    const params = useParams();
     let [blog, setBlog] = useState(null)
     let [error, setError] = useState(null)
 
@@ -33,7 +33,7 @@ export function Blog() {
             const response = await fetch(url);
             if (response.ok) {
                 const data = await response.json();
-                setBlog(data);
+                setTimeout(() => { setBlog(data) }, 3000)
             } else {
                 setError(response.status);
             }
@@ -43,18 +43,17 @@ export function Blog() {
     }, []);
 
     if (error) {
-        return <>
-        </>
+        return <></>
     }
-    else if (blog) {
-        return <>
-            <BlogDisplay title={blog.title} summary="lol" content={blog.body} />
-        </>
-    } else {
-        return <>
-            <div className="blog-placeholder">
+
+    return (
+        <div className="blog-container">
+            {blog ? (
+                <BlogDisplay title={blog.title} summary="lol" content={blog.body} />
+            ) : (
                 <Spinner />
-            </div>
-        </>
-    }
+            )}
+        </div>
+    )
+
 }

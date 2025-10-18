@@ -1,16 +1,29 @@
-div.blog-placeholder {
+@keyframes blogTransition {
+    0% {
+        opacity: 0;
+        transform: translateY(-500pt);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+div.blog-container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 100%;
+    overflow: hidden;
 }
 
 article.blog {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100%;
     max-width: 900pt;
+
+    transform-origin: top;
+    animation-name: blogTransition;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
 }
 
 article.blog img {
