@@ -1,8 +1,16 @@
+div.blog-placeholder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+}
+
 article.blog {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 800pt;
+    min-height: 100%;
+    max-width: 900pt;
 }
 
 article.blog img {

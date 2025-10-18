@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Disclaimer } from "../../../components/public/Disclaimer/Disclaimer";
 import "./Blog.css"
+import { Spinner } from "../../../components/public/Spinner/Spinner";
 
 function BlogDisplay(props) {
     return <>
@@ -43,7 +44,6 @@ export function Blog() {
 
     if (error) {
         return <>
-            <p>{error}</p>
         </>
     }
     else if (blog) {
@@ -52,7 +52,9 @@ export function Blog() {
         </>
     } else {
         return <>
-            <p>hold on gro</p>
+            <div className="blog-placeholder">
+                <Spinner />
+            </div>
         </>
     }
 }
