@@ -1,0 +1,49 @@
+/* core */
+
+footer.footer {
+    display: flex;
+    background-color: var(--background-alt);
+    border-top: 2px solid var(--border-neutral);
+    min-height: 120pt;
+    margin-top: 20pt;
+}
+
+footer.footer>div {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    max-width: 500pt;
+    margin: auto;
+    justify-content: space-between;
+    padding-inline: 20pt;
+}
+
+/* contact */
+
+ul.contact-info {
+    list-style-type: none;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    margin-block: auto;
+    padding: 0;
+}
+
+ul.contact-info h2 {
+    margin-top: 0;
+}
+
+/* socials */
+
+ul.social-media {
+    display: flex;
+    list-style-type: none;
+    height: fit-content;
+    margin-block: auto;
+    padding: 0;
+
+    & img {
+        width: 30pt;
+        margin-inline: 4pt;
+    }
+}

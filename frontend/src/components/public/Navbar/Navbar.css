@@ -1,0 +1,108 @@
+/* core */
+
+nav.navbar {
+    background-color: var(--background-alt);
+    border-bottom: 2px solid var(--border-neutral);
+}
+
+nav.navbar > div {
+    max-width: 450pt;
+    margin-inline: auto;
+    padding-inline: 10pt;
+}
+
+nav.navbar hr {
+    color: var(--accent-1);
+}
+
+/* links */
+
+nav.navbar a {
+    color: unset;
+    text-decoration: none;
+}
+
+nav.navbar ul.navbar-links {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+
+    width: 100%;
+    height: 30pt;
+    margin: 12px auto;
+    padding: 0;
+}
+
+nav.navbar ul.navbar-links li {
+    font-size: large;
+    text-transform: uppercase;
+
+    margin: auto;
+    color: var(--accent-1);
+    transition: text-shadow 150ms, letter-spacing 150ms;
+}
+
+nav.navbar ul.navbar-links li:hover {
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px var(--accent-1);
+}
+
+/* logo */
+
+.sosdrink-logo {
+    position: relative;
+    display: block;
+
+    width: 120px;
+    height: 120px;
+    
+    margin-block: 20px;
+    margin-inline: auto !important;
+
+    --logo-color: var(--accent-2);
+    transition: transform 200ms
+}
+
+.sosdrink-logo:hover {
+    --logo-color: var(--accent-1);
+    transform: scale(1.1);
+}
+
+.sosdrink-logo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-color: var(--logo-color);
+    transition: background-color 200ms, transform 300ms;
+
+    -webkit-mask: url('./Logo.svg') no-repeat center;
+    mask: url('./Logo.svg') no-repeat center;
+    -webkit-mask-size: contain !important;
+    mask-size: contain !important;
+
+    z-index: 0;
+    transform: rotate(15deg);
+}
+
+.sosdrink-logo:hover::before {
+    transform: rotate(20deg)
+}
+
+.sosdrink-logo p {
+    margin: 0;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    font-size: 28px;
+    color: var(--logo-color);
+    background-color: var(--background-alt);
+    transition: color 200ms, letter-spacing 300ms;
+}
+
+.sosdrink-logo:hover p {
+    letter-spacing: 1px;
+}

@@ -1,0 +1,17 @@
+div.box-disclaimer {
+    background-color: crimson;
+    color: #111;
+    padding: 30px 20px;
+    margin-block: 40px;
+    border-radius: 6px;
+    text-align: justify;
+
+    & h2 {
+        margin: 0;
+    }
+
+    & p {
+        margin-block-start: 20px;
+        margin-block-end: 0;
+    }
+}

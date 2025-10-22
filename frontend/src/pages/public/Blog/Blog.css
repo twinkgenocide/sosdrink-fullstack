@@ -1,0 +1,22 @@
+article.blog {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800pt;
+}
+
+article.blog img {
+    width: 100%;
+    height: 200pt;
+
+    object-fit: cover;
+}
+
+article.blog hr {
+    width: 100%;
+}
+
+.blog-header,
+.blog-content {
+    margin-inline: 20pt;
+}
