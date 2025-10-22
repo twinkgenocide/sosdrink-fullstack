@@ -24,21 +24,14 @@ public class TipoUsuario {
 
     private Long id;
     private String nombre;
-    private String apellidos;
-    private String correo;
-    private String tipoUsuario; 
-    private String direccion;
-    private String clave;
 
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "tipousuario")
     private List<Usuario> usuarios;
 
     @Override
     public String toString() {
-        return "Usuario [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", correo=" + correo
-                + ", tipoUsuario=" + tipoUsuario + ", direccion=" + direccion + ", clave=" + clave + "]";
+        return "TipoUsuario [id=" + id + ", nombre=" + nombre + "]";
     }
-
 
    
 
