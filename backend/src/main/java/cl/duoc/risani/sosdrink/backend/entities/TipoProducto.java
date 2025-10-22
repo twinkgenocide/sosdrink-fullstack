@@ -7,8 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import java.util.List;
 
@@ -20,23 +18,20 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
-public class Usuario {
+public class TipoProducto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    private String nombre;
-    private String apellidos;
-    private String correo;
-    private String tipoUsuario; 
-    private String direccion;
-    private String clave;
-
-    @ManyToOne
-    @JoinColumn(name = "TipoUsuario.id")
-    private TipoUsuario tipousuario;
+    private String nombre;  
     
+    @OneToMany(mappedBy = "tipoProducto")
+    private List<Producto> productos;
 
+    @Override
+    public String toString() {
+        return "TipoProducto [id=" + id + ", nombre=" + nombre + "]";
+    }
 
 
    

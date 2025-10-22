@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import java.util.List;
 
@@ -31,16 +33,10 @@ public class Producto {
     private Integer criticalStock;
     private String category;
 
-    @OneToMany(mappedBy = "producto")
-    private List<Producto> productos;
-
-    @Override
-    public String toString() {
-        return "Producto [id=" + id + ", nombre=" + nombre + ", detalle=" + detalle + ", precio=" + precio
-                + ", imagen=" + imagen + ", stock=" + stock + ", criticalStock=" + criticalStock + ", category="
-                + category + "]";
-    }
-
+    @ManyToOne
+    @JoinColumn(name = "TipoProducto.id")
+    private TipoProducto tipoProducto;
+    
 
 
    

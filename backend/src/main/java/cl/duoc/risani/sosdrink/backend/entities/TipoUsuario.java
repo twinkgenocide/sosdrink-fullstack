@@ -7,8 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import java.util.List;
 
@@ -20,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
-public class Usuario {
+public class TipoUsuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -32,11 +30,14 @@ public class Usuario {
     private String direccion;
     private String clave;
 
-    @ManyToOne
-    @JoinColumn(name = "TipoUsuario.id")
-    private TipoUsuario tipousuario;
-    
+    @OneToMany(mappedBy = "usuario")
+    private List<Usuario> usuarios;
 
+    @Override
+    public String toString() {
+        return "Usuario [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", correo=" + correo
+                + ", tipoUsuario=" + tipoUsuario + ", direccion=" + direccion + ", clave=" + clave + "]";
+    }
 
 
    
