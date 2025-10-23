@@ -8,6 +8,6 @@ public interface ProductoServices {
     Producto obtenerId(Long id);
     List<Producto> listarTodas();    
     void eliminar(Long id);
-    Producto actualizar(Long id, Producto categoriaActualizada);
+    Producto actualizar(Long id, Producto productoActualizado);
 
 }
