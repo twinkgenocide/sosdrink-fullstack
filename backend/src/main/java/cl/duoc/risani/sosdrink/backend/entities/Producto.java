@@ -9,17 +9,11 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-
-
-@Entity
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,14 +25,9 @@ public class Producto {
     private String imagen;
     private Integer stock;
     private Integer criticalStock;
-    private String category;
 
     @ManyToOne
-    @JoinColumn(name = "TipoProducto.id")
+    @JoinColumn(name = "tipo_producto_id")
     private TipoProducto tipoProducto;
     
-
-
-   
-
 }

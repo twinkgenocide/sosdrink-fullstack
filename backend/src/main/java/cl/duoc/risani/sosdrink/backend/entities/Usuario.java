@@ -9,17 +9,11 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-
-
-@Entity
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,17 +22,11 @@ public class Usuario {
     private String nombre;
     private String apellidos;
     private String correo;
-    private String tipoUsuario; 
     private String direccion;
     private String clave;
 
     @ManyToOne
-    @JoinColumn(name = "TipoUsuario.id")
-    private TipoUsuario tipousuario;
+    @JoinColumn(name = "tipo_usuario_id")
+    private TipoUsuario tipoUsuario;
     
-
-
-
-   
-
 }

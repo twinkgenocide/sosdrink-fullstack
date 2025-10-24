@@ -10,14 +10,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-
-
-@Entity
 public class TipoProducto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +28,5 @@ public class TipoProducto {
     public String toString() {
         return "TipoProducto [id=" + id + ", nombre=" + nombre + "]";
     }
-
-
-   
 
 }

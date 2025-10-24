@@ -10,14 +10,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-
-
-@Entity
 public class TipoUsuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,14 +21,12 @@ public class TipoUsuario {
     private Long id;
     private String nombre;
 
-    @OneToMany(mappedBy = "tipousuario")
+    @OneToMany(mappedBy = "tipoUsuario")
     private List<Usuario> usuarios;
 
     @Override
     public String toString() {
         return "TipoUsuario [id=" + id + ", nombre=" + nombre + "]";
     }
-
-   
 
 }
