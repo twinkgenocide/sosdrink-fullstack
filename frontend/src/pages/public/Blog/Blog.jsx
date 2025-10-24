@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Disclaimer } from "../../../components/public/Disclaimer/Disclaimer";
-import "./Blog.css"
 import { Spinner } from "../../../components/public/Spinner/Spinner";
+import "./Blog.css"
 
 function BlogDisplay(props) {
     return <>
