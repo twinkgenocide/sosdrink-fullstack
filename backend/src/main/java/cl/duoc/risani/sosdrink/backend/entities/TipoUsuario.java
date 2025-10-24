@@ -29,4 +29,5 @@ public class TipoUsuario {
         return "TipoUsuario [id=" + id + ", nombre=" + nombre + "]";
     }
 
+
 }
