@@ -22,5 +22,6 @@ div.layout {
 }
 
 main {
+  display: flex;
   flex: 1;
 }

@@ -1,19 +1,23 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Disclaimer } from "../../../components/public/Disclaimer/Disclaimer";
+import { Spinner } from "../../../components/public/Spinner/Spinner";
 import "./Blog.css"
+import Markdown from "react-markdown";
 
-function BlogDisplay(props) {
+const api_path = (subpath) => `${window.location.protocol}//${window.location.hostname}:8080/${subpath}`
+
+function BlogDisplay({ blog }) {
     return <>
         <article className="blog">
-            <img src="https://talentclick.com/wp-content/uploads/2021/08/placeholder-image.png" />
+            <img src={api_path(blog.imagenUrl)} />
             <header className="blog-header">
-                <h1>{props.title}</h1>
-                <h3>{props.summary}</h3>
+                <h1>{blog.titulo}</h1>
+                <h3>{blog.resumen}</h3>
             </header>
             <hr />
             <section className="blog-content">
-                <p>{props.content}</p>
+                <Markdown>{blog.contenido}</Markdown>
                 <Disclaimer />
             </section>
         </article>
@@ -21,18 +25,18 @@ function BlogDisplay(props) {
 }
 
 export function Blog() {
-    let params = useParams();
+    const params = useParams();
     let [blog, setBlog] = useState(null)
     let [error, setError] = useState(null)
 
-    const url = `https://jsonplaceholder.typicode.com/posts/${params.blogId}`;
+    const url = `${window.location.protocol}//${window.location.hostname}:8080/api/blogs/${params.blogId}`
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(url);
             if (response.ok) {
                 const data = await response.json();
-                setBlog(data);
+                setTimeout(() => { setBlog(data) }, 1000)
             } else {
                 setError(response.status);
             }
@@ -42,17 +46,17 @@ export function Blog() {
     }, []);
 
     if (error) {
-        return <>
-            <p>{error}</p>
-        </>
+        return <></>
     }
-    else if (blog) {
-        return <>
-            <BlogDisplay title={blog.title} summary="lol" content={blog.body} />
-        </>
-    } else {
-        return <>
-            <p>hold on gro</p>
-        </>
-    }
+
+    return (
+        <div className="blog-container">
+            {blog ? (
+                <BlogDisplay blog={blog} />
+            ) : (
+                <Spinner />
+            )}
+        </div>
+    )
+
 }
