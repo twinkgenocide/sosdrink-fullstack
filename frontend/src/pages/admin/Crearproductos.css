@@ -1,0 +1,46 @@
+.nuevo-producto-box {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    max-width: 400px;
+    margin: 40px auto 0 auto;
+    padding: 28px 24px;
+}
+.nuevo-producto-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.nuevo-producto-box label {
+    font-weight: bold;
+    color: #18192b;
+}
+input, textarea {
+    padding: 4px;
+    border: 1.5px solid #000000;
+    border-radius: 6px;
+    background: #f7f7f8;
+    color: #18192b;
+}
+label {
+    padding: 4px;
+}
+.nuevo-producto-box textarea {
+    resize: vertical;
+}
+button {
+    background: #0509ee;
+    color: #f1f1f5;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s, transform 0.2s;
+}
+button:hover {
+    background: #400a81;
+    transform: scale(1.04);
+}

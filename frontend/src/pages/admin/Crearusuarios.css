@@ -1,0 +1,43 @@
+.nuevo-usuario-box {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    max-width: 400px;
+    margin: 40px auto 0 auto;
+    padding: 28px 24px;
+}
+.nuevo-usuario-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.nuevo-usuario-box label {
+    font-weight: bold;
+    color: #18192b;
+}
+.nuevo-usuario-box input,
+.nuevo-usuario-box select {
+    padding: 8px;
+    border: 1.5px solid #0f6322;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f7f7f8;
+    color: #18192b;
+}
+.btn-guardar-usuario {
+    background: #5efc82;
+    color: #18192b;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s, transform 0.2s;
+}
+.btn-guardar-usuario:hover {
+    background: #3be06b;
+    transform: scale(1.04);
+}
+

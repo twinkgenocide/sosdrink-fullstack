@@ -1,0 +1,42 @@
+.usuarios-panel {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    padding: 28px 24px;
+}
+.usuarios-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+.btn-nuevo-usuario {
+    background: #5efc82;
+    color: #18192b;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+.btn-nuevo-usuario:hover {
+    background: #3be06b;
+    transform: scale(1.05);
+}
+.usuarios-lista table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.usuarios-lista th, .usuarios-lista td {
+    padding: 10px 8px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+.usuarios-lista th {
+    background: #f7f7f8;
+    color: #18192b;
+}
