@@ -5,6 +5,9 @@ import { LayoutPublic } from './layouts/LayoutPublic';
 import './index.css'
 import { Blog } from './pages/public/Blog/Blog';
 
+import ''
+import { LayoutAdmin } from './layouts/LayoutAdmin';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -13,6 +16,20 @@ const router = createBrowserRouter([
       {
         path: '/blogs/:blogId',
         element: <Blog />
+      }
+    ]
+  },
+
+  {
+    path : '/admin',
+    element: <LayoutAdmin />,
+    children: [
+      {
+        path: '/admin',
+        element: (
+        <NavbarAdmin />,
+        <Saludo />
+      )
       }
     ]
   }

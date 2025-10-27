@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    background: #f7f7f8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #18192b;
+}
+
+tr:has(td):hover {
+    background-color: skyblue;
+    cursor: pointer;
+}
+
+.sidebar {
+    width: 220px;
+    background: #fff;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar .logo {
+    padding: 24px 20px 12px 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.sidebar nav {
+    flex: 1;
+}
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar nav ul li {
+    margin: 0;
+}
+.sidebar nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    color: #18192b;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.15s;
+}
+.sidebar nav ul li a.active,
+.sidebar nav ul li a:hover {
+    background: #f0f0f0;
+    color: #0a8f4a;
+}
+
+.main-content {
+    margin-left: 220px;
+    min-height: 100vh;
+    background: #f7f7f8;
+    padding: 0;
+}
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 40px 0 40px;
+}
+.admin-header h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.admin-panels {
+    margin: 32px 40px;
+    display: flex;
+    gap: 32px;
+}
+.panel {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    flex: 1;
+    min-height: 220px;
+    padding: 24px;
+}
+@media (max-width: 900px) {
+    .admin-panels {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .main-content, .admin-header, .admin-panels {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
