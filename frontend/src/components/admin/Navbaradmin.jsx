@@ -7,7 +7,7 @@ export function NavbarAdmin() {
         <div class="sidebar">
         <div>
             <div class="logo">
-                <span style="font-size:1.5em;"></span>
+                <span style={{fontSize:  "1.5em"}}></span>
                 <span>SOS Drink Administrador</span>
             </div>
             <nav>
