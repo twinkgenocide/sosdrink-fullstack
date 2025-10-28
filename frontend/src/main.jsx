@@ -6,7 +6,7 @@ import { Blog } from './pages/public/Blog/Blog';
 import { LayoutAdmin } from './layouts/LayoutAdmin';
 import { Saludo } from './components/admin/Saludo';
 
-import './index.css'
+//import './index.css'
 
 const router = createBrowserRouter([
   {
