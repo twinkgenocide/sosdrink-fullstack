@@ -1,0 +1,26 @@
+.tag {
+    width: fit-content;
+    margin-block: auto;
+    height: 2em;
+    border-radius: 20px;
+    padding: 2px 8px;
+
+    text-decoration: none;
+    font-size: 11px;
+    line-height: 1;
+    align-content: center;
+    justify-content: center;
+
+    color: #808080;
+    background-color: #1a1a1a;
+    border: 1px solid #404040;
+
+    transition: background-color, border-color, color;
+    transition-duration: 150ms;
+}
+
+.tag:hover {
+    background-color: color-mix(in srgb, var(--accent-2), transparent 80%);
+    border-color: var(--accent-2);
+    color: var(--accent-2);
+}
