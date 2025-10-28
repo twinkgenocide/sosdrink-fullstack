@@ -11,7 +11,6 @@ export function LayoutAdmin() {
       <main>
         <Outlet />
       </main>
-      <Saludo />
     </div>
   </>
 }
