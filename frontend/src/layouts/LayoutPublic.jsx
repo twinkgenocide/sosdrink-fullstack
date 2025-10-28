@@ -5,7 +5,7 @@ import "./LayoutPublic.css"
 
 export function LayoutPublic() {
   return <>
-    <div className="layout">
+    <div className="public-layout">
       <Navbar />
       <main>
         <Outlet />

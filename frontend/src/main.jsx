@@ -2,9 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { LayoutPublic } from './layouts/LayoutPublic';
-import './index.css'
 import { Blog } from './pages/public/Blog/Blog';
 import { BlogCatalog } from './pages/public/BlogCatalog/BlogCatalog';
+import { LayoutAdmin } from './layouts/LayoutAdmin';
+import { Saludo } from './components/admin/Saludo';
+
+import './index.css'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +21,17 @@ const router = createBrowserRouter([
       {
         path: '/blogs/:blogId',
         element: <Blog />
+      }
+    ]
+  },
+  {
+    path: '/admin',
+    element: <LayoutAdmin />,
+    children: [
+      {
+        path: '/admin',
+        index: true,
+        element: <Saludo />
       }
     ]
   }
