@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom"
 import { Saludo } from "../components/admin/Saludo.jsx"
-import { Navbaradmin } from "../components/admin/Navbaradmin.jsx"
+import { NavbarAdmin } from "../components/admin/Navbaradmin.jsx"
 
-import ""
+import "./LayoutAdmin.css"
 
 export function LayoutAdmin() {
   return <>
     <div className="layout">
-      <Navbaradmin />
+      <NavbarAdmin />
       <main>
         <Outlet />
       </main>

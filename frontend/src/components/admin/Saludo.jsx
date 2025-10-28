@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ""
+import "./navsaludo.css"
 
 export function Saludo() {
 
