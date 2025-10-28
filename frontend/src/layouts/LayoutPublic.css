@@ -1,4 +1,4 @@
-:root {
+:root:has(div.public-layout) {
   --accent-1: greenyellow;
   --accent-2: blueviolet;
   --background: #101010;
@@ -8,20 +8,20 @@
   background-color: var(--background-alt);
 }
 
-#root {
+#root:has(div.public-layout) {
   display: flex;
   flex-direction: column;
   background-color: var(--background);
   color: #e0e0f0;
 }
 
-div.layout {
+div.public-layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-main {
+div.public-layout main {
   display: flex;
   flex: 1;
 }

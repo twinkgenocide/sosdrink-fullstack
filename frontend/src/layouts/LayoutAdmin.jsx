@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom"
-import { Saludo } from "../components/admin/Saludo.jsx"
 import { NavbarAdmin } from "../components/admin/Navbaradmin.jsx"
 
 import "./LayoutAdmin.css"
