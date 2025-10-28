@@ -41,3 +41,29 @@ article.blog hr {
 .blog-content {
     margin-inline: 20pt;
 }
+
+.blog-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10pt;
+    padding-block: 15pt;
+
+    & h1,
+    & h2,
+    & h3 {
+        margin: 0;
+    }
+}
+
+.blog-header-horizontal {
+    display: flex;
+    gap: 10pt;
+}
+
+.blog-content {
+    padding-block: 15pt;
+
+    & .box-disclaimer {
+        margin-top: 40pt;
+    }
+}
