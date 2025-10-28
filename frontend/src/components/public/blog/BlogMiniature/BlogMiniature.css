@@ -1,0 +1,11 @@
+.blog-miniature {
+    display: block;
+    width: 300pt;
+    background-color: red;
+}
+
+.blog-miniature img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+}
