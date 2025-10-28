@@ -2,11 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { LayoutPublic } from './layouts/LayoutPublic';
-import './index.css'
 import { Blog } from './pages/public/Blog/Blog';
-
-
 import { LayoutAdmin } from './layouts/LayoutAdmin';
+import { Saludo } from './components/admin/Saludo';
+
+import './index.css'
 
 const router = createBrowserRouter([
   {
@@ -21,11 +21,11 @@ const router = createBrowserRouter([
   },
 
   {
-    path : '/admin',
+    path: '/admin',
     element: <LayoutAdmin />,
     children: [
       {
-        path: '/',
+        path: '/admin',
         index: true,
         element: <Saludo />
       }
