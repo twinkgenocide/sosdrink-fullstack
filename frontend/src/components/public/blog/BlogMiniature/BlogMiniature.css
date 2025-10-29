@@ -1,11 +1,76 @@
+@keyframes blogMiniFade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .blog-miniature {
-    display: block;
-    width: 300pt;
-    background-color: red;
+    display: flex;
+    width: 240pt;
+    height: fit-content;
+    min-height: 280pt;
+
+    text-decoration: none;
+    color: unset;
+    background-color: var(--background-alt);
+    border: 1px solid var(--border-neutral);
+
+    margin: 10pt;
+    padding: 10pt;
+    border-radius: 10px;
+
+    transition: transform 200ms;
+    cursor: pointer;
+}
+
+.blog-miniature .spinner-container {
+    height: 240pt;
+}
+
+.blog-miniature:hover {
+    transform: scale(1.02);
+}
+
+.blog-miniature .meta {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    gap: 4pt;
+    margin-block: 2pt;
+
+    & time {
+        color: #606060;
+        font-size: 0.9em;
+    }
+
+}
+
+.blog-miniature .content {
+    animation: blogMiniFade;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    line-height: 1.3;
+
+    &>h3 {
+        margin-block: 8pt;
+    }
+
+    &>p {
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    padding-bottom: 6pt;
+
 }
 
 .blog-miniature img {
     object-fit: cover;
     width: 100%;
     height: 200px;
+    border-radius: 5px;
 }
