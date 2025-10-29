@@ -9,11 +9,10 @@ export function BlogCatalog() {
     const [searchParams] = useSearchParams();
     const [blogs, setBlogs] = useState([]);
 
-    const cat = searchParams.get("categoria")
-    let url = cat ? `api/blogs?categoria=${cat}` : 'api/blogs';
-    url = api_path(url);
-
     useEffect(() => {
+        setBlogs([]);
+        const cat = searchParams.get("categoria")
+        const url = api_path(cat ? `api/blogs?categoria=${cat}` : 'api/blogs');
         const fetchData = async () => {
             const response = await fetch(url);
             if (response.ok) {
@@ -22,18 +21,18 @@ export function BlogCatalog() {
             }
         }
         fetchData();
-    }, []);
+    }, [searchParams]);
 
     return (
         <div className="blog-catalog">
-            {blogs ? <BlogList blogs={blogs} /> : <Spinner />}
+            {blogs.length > 0 ? <BlogList blogs={blogs} /> : <Spinner />}
         </div>
     )
 }
 
 function BlogList({ blogs }) {
     const content = blogs.map(blog => {
-        return <BlogMiniature blog={blog} />
+        return <BlogMiniature key={blog.id} blog={blog} />
     })
 
     return <>{content}</>

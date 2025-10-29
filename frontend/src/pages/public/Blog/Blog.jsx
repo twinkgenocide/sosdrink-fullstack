@@ -7,31 +7,6 @@ import { Tag } from "../../../components/public/Tag/Tag";
 import "./Blog.css"
 import Markdown from "react-markdown";
 
-function BlogDisplay({ blog }) {
-    return <>
-        <article className="blog">
-            <img src={api_path(blog.imagenUrl)} />
-            <header className="blog-header">
-                <h1>{blog.titulo}</h1>
-                <h3>{blog.resumen}</h3>
-                <div className="blog-header-horizontal">
-                    <time dateTime={blog.fecha}>{new Date(blog.fecha).toLocaleString('es-CL', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    })}</time>
-                    <Tag href={`/blogs?categoria=${blog.categoriaBlog.id}`} text={blog.categoriaBlog.nombre} />
-                </div>
-            </header>
-            <hr />
-            <section className="blog-content">
-                <Markdown>{blog.contenido}</Markdown>
-                <Disclaimer />
-            </section>
-        </article>
-    </>
-}
-
 export function Blog() {
     const params = useParams();
     let [blog, setBlog] = useState(null);
@@ -68,3 +43,29 @@ export function Blog() {
     )
 
 }
+
+function BlogDisplay({ blog }) {
+    return <>
+        <article className="blog">
+            <img src={api_path(blog.imagenUrl)} />
+            <header className="blog-header">
+                <h1>{blog.titulo}</h1>
+                <h3>{blog.resumen}</h3>
+                <div className="blog-header-horizontal">
+                    <time dateTime={blog.fecha}>{new Date(blog.fecha).toLocaleString('es-CL', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    })}</time>
+                    <Tag href={`/blogs?categoria=${blog.categoriaBlog.id}`} text={blog.categoriaBlog.nombre} />
+                </div>
+            </header>
+            <hr />
+            <section className="blog-content">
+                <Markdown>{blog.contenido}</Markdown>
+                <Disclaimer />
+            </section>
+        </article>
+    </>
+}
+
