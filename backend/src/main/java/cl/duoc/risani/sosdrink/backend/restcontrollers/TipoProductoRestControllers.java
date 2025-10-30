@@ -9,8 +9,7 @@ import cl.duoc.risani.sosdrink.backend.services.TipoProductoServices;
 import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/tiposdeproductos")
 
@@ -37,18 +36,16 @@ public class TipoProductoRestControllers {
         return ResponseEntity.ok(tiposproductos);
     }
 
-  
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarTipoDeProducto(@PathVariable Long id) {
         tipoproductoServices.eliminar(id);
         return ResponseEntity.noContent().build();
     }
 
-   
     @PutMapping("/{id}")
-    public ResponseEntity<TipoProducto> actualizarTipoDeProducto(@PathVariable Long id, @RequestBody TipoProducto tipoProductoActualizado) {
+    public ResponseEntity<TipoProducto> actualizarTipoDeProducto(@PathVariable Long id,
+            @RequestBody TipoProducto tipoProductoActualizado) {
         TipoProducto tipoproducto = tipoproductoServices.actualizar(id, tipoProductoActualizado);
         return ResponseEntity.ok(tipoproducto);
     }
 }
-

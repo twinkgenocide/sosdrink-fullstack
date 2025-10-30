@@ -9,8 +9,7 @@ import cl.duoc.risani.sosdrink.backend.services.TipoUsuarioServices;
 import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/tiposdeusuarios")
 
@@ -37,18 +36,16 @@ public class TipoUsuarioRestControllers {
         return ResponseEntity.ok(tiposdeusuarios);
     }
 
-  
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarTipoDeUsuario(@PathVariable Long id) {
         tipousuarioServices.eliminar(id);
         return ResponseEntity.noContent().build();
     }
 
-   
     @PutMapping("/{id}")
-    public ResponseEntity<TipoUsuario> actualizarTipoDeUsuario(@PathVariable Long id, @RequestBody TipoUsuario tipoUsuarioActualizado) {
+    public ResponseEntity<TipoUsuario> actualizarTipoDeUsuario(@PathVariable Long id,
+            @RequestBody TipoUsuario tipoUsuarioActualizado) {
         TipoUsuario tipousuario = tipousuarioServices.actualizar(id, tipoUsuarioActualizado);
         return ResponseEntity.ok(tipousuario);
     }
 }
-
