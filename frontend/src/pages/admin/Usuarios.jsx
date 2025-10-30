@@ -1,6 +1,24 @@
-import React from 'react'
+import { useEffect, useState } from "react"
+import "./Usuarios.css"
+import { useNavigate } from "react-router-dom";
+import { api_path } from "../../util/apipath";
 
-export function AdminUsers(){
+export function AdminUsers() {
+  const [usuarios, setUsuarios] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setUsuarios([]);
+    const url = api_path('api/usuarios');
+    const fetchData = async () => {
+      const response = await fetch(url);
+      if (response.ok) {
+        const data = await response.json();
+        setUsuarios(data);
+      }
+    }
+    fetchData();
+  }, []);
 
   return <>
     <div className="main-content">
@@ -22,16 +40,14 @@ export function AdminUsers(){
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Juan Pérez</td>
-                <td>juanperez@email.com</td>
-                <td>Administrador</td>
-              </tr>
-              <tr>
-                <td>María López</td>
-                <td>marialopez@email.com</td>
-                <td>Usuario</td>
-              </tr>
+              {
+                usuarios.map((p) => <tr onClick={() => navigate(`/admin/usuarios/${p.run}`)}>
+                  <td>{p.nombre}</td>
+                  <td>{p.correo}</td>
+                  <td>{p.tipoUsuario.nombre}</td>
+                </tr>
+                )
+              }
             </tbody>
           </table>
         </div>
