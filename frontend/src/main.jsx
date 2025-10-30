@@ -7,6 +7,7 @@ import { BlogCatalogPage } from './pages/public/BlogCatalog/BlogCatalog';
 import { LayoutAdmin } from './layouts/LayoutAdmin';
 import { Saludo } from './components/admin/Saludo';
 import { ProductCatalogPage } from './pages/public/ProductCatalog/ProductCatalog';
+import { Product } from './pages/public/Product/Product';
 
 import './index.css'
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: 'productos',
         element: <ProductCatalogPage />
+      },
+      {
+        path: 'productos/:productoId',
+        element: <Product />
       }
     ]
   },
