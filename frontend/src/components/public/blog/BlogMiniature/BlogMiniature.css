@@ -1,21 +1,9 @@
-@keyframes blogMiniFade {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
 .blog-miniature {
     display: flex;
     width: 240pt;
     height: fit-content;
     min-height: 280pt;
 
-    text-decoration: none;
-    color: unset;
     background-color: var(--background-alt);
     border: 1px solid var(--border-neutral);
 
@@ -49,7 +37,7 @@
 }
 
 .blog-miniature .content {
-    animation: blogMiniFade;
+    animation: animFadeIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
     line-height: 1.3;
