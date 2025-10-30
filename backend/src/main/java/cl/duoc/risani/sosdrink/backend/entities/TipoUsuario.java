@@ -10,6 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -22,12 +24,12 @@ public class TipoUsuario {
     private String nombre;
 
     @OneToMany(mappedBy = "tipoUsuario")
+    @JsonIgnore
     private List<Usuario> usuarios;
 
     @Override
     public String toString() {
         return "TipoUsuario [id=" + id + ", nombre=" + nombre + "]";
     }
-
 
 }
