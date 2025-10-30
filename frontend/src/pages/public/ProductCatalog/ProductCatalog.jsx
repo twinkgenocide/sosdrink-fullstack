@@ -22,6 +22,7 @@ export function ProductCatalog({ tipo, scroll, skip, texto }) {
 
     useEffect(() => {
         setProductos([]);
+        setTextoDefault('Nuestros productos');
         const url = api_path('api/productos');
         const fetchData = async () => {
             const response = await fetch(url);

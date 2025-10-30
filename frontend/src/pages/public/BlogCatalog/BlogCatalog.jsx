@@ -22,6 +22,7 @@ export function BlogCatalog({ categoria, vertical, skip, texto }) {
 
     useEffect(() => {
         setBlogs([]);
+        setTituloDefault("Sabores, novedades y más");
         const url = api_path(categoria ? `api/blogs?categoria=${categoria}` : 'api/blogs');
         const fetchData = async () => {
             const response = await fetch(url);
