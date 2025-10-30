@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./navsaludo.css"
 
 export function NavbarAdmin() {
@@ -11,9 +12,9 @@ export function NavbarAdmin() {
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="index.html">🏠 Home</a></li>
-                        <li><a href="users.html">👥 Usuarios</a></li>
-                        <li><a href="products.html">🛒 Productos</a></li>
+                        <li><Link to="/admin">🏠 Home</Link></li>
+                        <li><Link to="/admin/usuarios">👥 Usuarios</Link></li>
+                        <li><Link to="/admin/productos">🛒 Productos</Link></li>
                     </ul>
                 </nav>
             </div>
