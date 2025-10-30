@@ -14,6 +14,7 @@ export function Navbar() {
                     <li><Link to="/blogs">Blogs</Link></li>
                     <li><Link to="/nosotros">Nosotros</Link></li>
                     <li><Link to="/contacto">Contacto</Link></li>
+                    <li><Link to="/login">Ingresa</Link></li>
                 </ul>
                 <hr />
             </div>
