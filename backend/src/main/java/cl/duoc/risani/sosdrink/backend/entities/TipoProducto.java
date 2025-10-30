@@ -10,6 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -19,9 +21,10 @@ public class TipoProducto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    private String nombre;  
-    
+    private String nombre;
+
     @OneToMany(mappedBy = "tipoProducto")
+    @JsonIgnore
     private List<Producto> productos;
 
     @Override
