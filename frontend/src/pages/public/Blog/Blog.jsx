@@ -6,15 +6,17 @@ import { Spinner } from "../../../components/public/Spinner/Spinner";
 import { Tag } from "../../../components/public/Tag/Tag";
 import "./Blog.css"
 import Markdown from "react-markdown";
+import { BlogCatalog } from "../BlogCatalog/BlogCatalog";
 
 export function Blog() {
     const params = useParams();
     let [blog, setBlog] = useState(null);
     let [error, setError] = useState(null);
 
-    const url = api_path(`api/blogs/${params.blogId}`);
-
     useEffect(() => {
+        setBlog(null);
+        setError(null);
+        const url = api_path(`api/blogs/${params.blogId}`);
         const fetchData = async () => {
             const response = await fetch(url);
             if (response.ok) {
@@ -26,7 +28,7 @@ export function Blog() {
         };
 
         fetchData();
-    }, []);
+    }, [params]);
 
     if (error) {
         return <></>
@@ -35,7 +37,16 @@ export function Blog() {
     return (
         <div className="blog-container">
             {blog ? (
-                <BlogDisplay blog={blog} />
+                <>
+                    <BlogDisplay blog={blog} />
+                    <hr />
+                    <BlogCatalog
+                        categoria={blog.categoriaBlog.id}
+                        texto={'Artículos relacionados'}
+                        vertical={true}
+                        skip={[blog.id]}
+                    />
+                </>
             ) : (
                 <Spinner />
             )}
