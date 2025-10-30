@@ -23,8 +23,16 @@ export function ProductMiniature({ product }) {
         fetchImage();
     }, []);
 
-    return <div className="product-miniature" onClick={(e) => {
-        if (e.target.closest("a")) return;
+    let classes = ["product-miniature"];
+
+    if (product.stock == 0) {
+        classes.push("no-stock")
+    } else if (product.stock <= product.criticalStock) {
+        classes.push("critical-stock");
+    }
+
+    return <div className={classes.join(' ')} onClick={(e) => {
+        if (product.stock == 0 || e.target.closest("a")) return;
         navigate(`/productos/${product.id}`)
     }}>
         {

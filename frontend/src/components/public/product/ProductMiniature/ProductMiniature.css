@@ -11,21 +11,23 @@
     padding: 10pt;
     padding-bottom: 2lh;
 
-    transition: transform 200ms;
-    cursor: pointer;
-
     border-radius: 15px;
 
     justify-content: center;
     align-content: center;
 }
 
-.product-miniature .spinner-container {
-    margin: auto;
+.product-miniature:not(.no-stock) {
+    transition: transform 200ms;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.02);
+    }
 }
 
-.product-miniature:hover {
-    transform: scale(1.02);
+.product-miniature .spinner-container {
+    margin: auto;
 }
 
 .product-miniature .content {
@@ -66,4 +68,32 @@
     position: absolute;
     top: 15pt;
     left: 15pt;
+}
+
+.product-miniature.no-stock .content::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: color-mix(in srgb, var(--background), transparent 50%);
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.product-miniature.no-stock p.price {
+    color: transparent;
+
+    &::after {
+        position: absolute;
+        inset: 0;
+        white-space: nowrap;
+        content: 'FUERA DE STOCK';
+        color: var(--accent-3);
+    }
+}
+
+.product-miniature.critical-stock p.price::after {
+    content: 'QUEDAN POCOS!';
+    margin-inline: 5pt;
+    color: var(--accent-3);
+    font-size: 0.7em;
 }

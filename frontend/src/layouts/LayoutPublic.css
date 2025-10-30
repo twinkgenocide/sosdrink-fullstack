@@ -1,6 +1,7 @@
 :root:has(div.public-layout) {
   --accent-1: greenyellow;
   --accent-2: blueviolet;
+  --accent-3: crimson;
   --background: #101010;
   --background-alt: #121212;
   --border-neutral: #303030;
