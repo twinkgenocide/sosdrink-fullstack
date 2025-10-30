@@ -1,4 +1,6 @@
 div.product-catalog {
+    display: flex;
+    justify-content: center;
     width: 100%;
 }
 
@@ -8,6 +10,8 @@ div.product-catalog .title {
 }
 
 div.product-catalog .products {
+    width: 100%;
+    max-width: 80vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
