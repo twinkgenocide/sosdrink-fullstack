@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { LayoutPublic } from './layouts/LayoutPublic';
 import { Blog } from './pages/public/Blog/Blog';
-import { BlogCatalog } from './pages/public/BlogCatalog/BlogCatalog';
+import { BlogCatalogPage } from './pages/public/BlogCatalog/BlogCatalog';
 import { LayoutAdmin } from './layouts/LayoutAdmin';
 import { Saludo } from './components/admin/Saludo';
 
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'blogs',
-        element: <BlogCatalog />
+        element: <BlogCatalogPage />
       },
       {
         path: '/blogs/:blogId',
