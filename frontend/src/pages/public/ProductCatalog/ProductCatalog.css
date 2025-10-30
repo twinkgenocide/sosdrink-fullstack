@@ -1,0 +1,18 @@
+div.product-catalog {
+    width: 100%;
+}
+
+div.product-catalog .title {
+    width: 100%;
+    text-align: center;
+}
+
+div.product-catalog .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10pt;
+
+    animation: animFadeIn;
+    animation-duration: 1s;
+}
