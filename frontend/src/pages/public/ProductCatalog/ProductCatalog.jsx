@@ -30,7 +30,7 @@ export function ProductCatalog({ tipo, scroll, skip, texto }) {
                 const data = await response.json();
                 setTimeout(() => {
                     const productos = tipo ? data.filter((p) => p.tipoProducto.id == tipo) : data;
-                    setProductos(productos);
+                    setProductos(skip ? productos.filter((p) => p.id != skip) : productos);
                     if (tipo && productos.length > 0) {
                         const nombreTipo = productos[0].tipoProducto.nombre;
                         setTextoDefault(`Productos de ${nombreTipo}`);
@@ -41,7 +41,7 @@ export function ProductCatalog({ tipo, scroll, skip, texto }) {
         fetchData();
     }, [tipo]);
 
-    return <div className={scroll ? "product-catalog vertical" : "product-catalog"}>
+    return <div className={scroll ? "product-catalog scroll" : "product-catalog"}>
         {productos.length > 0 ? <div className="products">
             <h1 className="title">{texto ? texto : textoDefault}</h1>
             <ProductList products={productos} />
@@ -50,7 +50,7 @@ export function ProductCatalog({ tipo, scroll, skip, texto }) {
 }
 
 export function ProductList({ products }) {
-    return <>
+    return <div className="product-list">
         {products.map(product => <ProductMiniature key={product.id} product={product} />)}
-    </>
+    </div>
 }

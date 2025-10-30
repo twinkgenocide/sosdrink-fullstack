@@ -20,3 +20,22 @@ div.product-catalog .products {
     animation: animFadeIn;
     animation-duration: 1s;
 }
+
+div.product-catalog .products .product-list {
+    display: contents;
+}
+
+div.product-catalog.scroll .products .product-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    gap: 10pt;
+    padding: 5pt;
+}
+
+div.product-catalog.scroll .products .product-list>* {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
