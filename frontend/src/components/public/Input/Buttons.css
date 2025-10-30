@@ -1,0 +1,29 @@
+/* neon button */
+
+button.neon-btn {
+    --btn-accent: var(--accent-2);
+    --btn-hilite: var(--accent-1);
+
+    --btn-curcol: var(--btn-accent);
+
+    color: var(--btn-curcol);
+    border: 2px solid var(--btn-curcol);
+    background-color: color-mix(in srgb, var(--btn-curcol), var(--background) 70%);
+
+    border-radius: 4px;
+    padding: 5pt 20pt;
+    font-size: 14pt;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+    transition: color, border-color, background-color;
+    transition-duration: 150ms;
+}
+
+button.neon-btn:hover {
+    --btn-curcol: var(--btn-hilite);
+}
+
+button.neon-btn.negative {
+    --btn-accent: var(--accent-3);
+}
