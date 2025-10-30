@@ -1,0 +1,49 @@
+div.num-spinner {
+    display: flex;
+    width: fit-content;
+}
+
+div.num-spinner button,
+div.num-spinner input {
+    height: 32pt;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+div.num-spinner input {
+    width: 40pt;
+    background-color: color-mix(in srgb, var(--accent-2), var(--background) 80%);
+    border: 2px solid var(--accent-2);
+    border-left: none;
+    border-right: none;
+    outline: none;
+
+    color: var(--accent-2);
+    font-size: 1.1em;
+    text-align: center;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    -moz-appearance: textfield;
+}
+
+div.num-spinner button {
+    width: 30pt;
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+div.num-spinner> :first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+div.num-spinner> :last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
