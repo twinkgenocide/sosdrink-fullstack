@@ -5,6 +5,7 @@ import { Spinner } from "../../Spinner/Spinner";
 import { Tag } from "../../Tag/Tag";
 
 import "./ProductMiniature.css";
+import { CartButtonPlus } from "../../cart/CartButtons/CartButtons";
 
 export function ProductMiniature({ product }) {
     const [image, setImage] = useState();
@@ -32,20 +33,27 @@ export function ProductMiniature({ product }) {
     }
 
     return <div className={classes.join(' ')} onClick={(e) => {
-        if (product.stock == 0 || e.target.closest("a")) return;
+        if (product.stock == 0 || e.target.closest("a") || e.target.closest("button")) return;
         navigate(`/productos/${product.id}`)
     }}>
         {
-            image ? <ProductMiniContent product={product} image={image} /> : <Spinner />
+            image ? <ProductMiniContent product={product} image={image} showButton={product.stock > 0} /> : <Spinner />
         }
     </div>
 }
 
-function ProductMiniContent({ product, image }) {
+function ProductMiniContent({ product, image, showButton }) {
+    let button = null;
+
+    if (showButton) {
+        button = <CartButtonPlus productId={product.id} />
+    }
+
     return <div className="content">
         <img src={image} />
         <h1 className="name">{product.nombre}</h1>
         <p className="price">{`$${product.precio}`}</p>
         <Tag href={`/productos?tipo=${product.tipoProducto.id}`} text={product.tipoProducto.nombre} />
+        {button}
     </div>
 }

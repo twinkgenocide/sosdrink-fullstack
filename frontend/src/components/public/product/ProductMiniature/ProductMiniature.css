@@ -22,7 +22,7 @@
     cursor: pointer;
 
     &:hover {
-        transform: scale(1.02);
+        transform: scale(1.03);
     }
 }
 
@@ -68,6 +68,12 @@
     position: absolute;
     top: 15pt;
     left: 15pt;
+}
+
+.product-miniature button.cart-btn {
+    position: absolute;
+    bottom: 5pt;
+    right: 5pt;
 }
 
 .product-miniature.no-stock .content::after {
