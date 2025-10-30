@@ -5,7 +5,7 @@ import { Spinner } from "../../Spinner/Spinner";
 import { Tag } from "../../Tag/Tag";
 
 import "./ProductMiniature.css";
-import { CartButtonPlus } from "../../cart/CartButtons/CartButtons";
+import { CartButtonDummy } from "../../cart/CartButtons/CartButtons";
 
 export function ProductMiniature({ product }) {
     const [image, setImage] = useState();
@@ -46,7 +46,7 @@ function ProductMiniContent({ product, image, showButton }) {
     let button = null;
 
     if (showButton) {
-        button = <CartButtonPlus productId={product.id} />
+        button = <CartButtonDummy productId={product.id} />
     }
 
     return <div className="content">
