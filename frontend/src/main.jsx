@@ -12,6 +12,7 @@ import { Product } from './pages/public/Product/Product';
 import './index.css'
 import { AdminUsers } from './pages/admin/Usuarios';
 import { AdminProductos } from './pages/admin/Productos';
+import { LoginPage } from './pages/public/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: 'productos/:productoId',
         element: <Product />
+      },
+      {
+        path: 'login',
+        element: <LoginPage />
       }
     ]
   },

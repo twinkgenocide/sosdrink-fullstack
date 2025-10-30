@@ -1,6 +1,7 @@
 package cl.duoc.risani.sosdrink.backend.restcontrollers;
 
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +41,20 @@ public class UsuarioRestControllers {
     public ResponseEntity<Void> eliminarUsuario(@PathVariable String run) {
         usuarioservices.eliminar(run);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<Usuario> intentarIngreso(@RequestBody Usuario usuario) {
+        List<Usuario> allUsuarios = usuarioservices.listarTodas();
+        for (Usuario u : allUsuarios) {
+            if (u.getCorreo().equals(usuario.getCorreo())) {
+                if (u.getClave().equals(usuario.getClave())) {
+                    return ResponseEntity.ok(u);
+                }
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            }
+        }
+        return ResponseEntity.notFound().build();
     }
 
     @PutMapping("/{id}")
