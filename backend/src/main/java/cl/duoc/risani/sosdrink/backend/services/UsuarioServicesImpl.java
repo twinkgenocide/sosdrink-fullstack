@@ -15,14 +15,13 @@ public class UsuarioServicesImpl implements UsuarioServices {
     private UsuarioRepositories usuarioRepositories;
 
     @Override
-    public Usuario crear(Usuario usuario){
+    public Usuario crear(Usuario usuario) {
         return usuarioRepositories.save(usuario);
     }
 
-
     @Override
-    public Usuario obtenerId(Long id) {
-        return usuarioRepositories.findById(id)
+    public Usuario obtenerRun(String run) {
+        return usuarioRepositories.findById(run)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
     }
 
@@ -32,20 +31,18 @@ public class UsuarioServicesImpl implements UsuarioServices {
     }
 
     @Override
-    public void eliminar(Long id) {
-        if (!usuarioRepositories.existsById(id)) {
+    public void eliminar(String run) {
+        if (!usuarioRepositories.existsById(run)) {
             throw new RuntimeException("Usuario no encontrado");
         }
-        usuarioRepositories.deleteById(id);
+        usuarioRepositories.deleteById(run);
     }
 
     @Override
-    public Usuario actualizar(Long id, Usuario usuarioActualizado) {
-        Usuario existente = obtenerId(id);
+    public Usuario actualizar(String run, Usuario usuarioActualizado) {
+        Usuario existente = obtenerRun(run);
         existente.setNombre(usuarioActualizado.getNombre());
         return usuarioRepositories.save(existente);
     }
 
-
 }
-

@@ -25,8 +25,8 @@ public class UsuarioRestControllers {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Usuario> obtenerUsuarioPorId(@PathVariable Long id) {
-        Usuario usuario = usuarioservices.obtenerId(id);
+    public ResponseEntity<Usuario> obtenerUsuarioPorId(@PathVariable String run) {
+        Usuario usuario = usuarioservices.obtenerRun(run);
         return ResponseEntity.ok(usuario);
     }
 
@@ -37,14 +37,15 @@ public class UsuarioRestControllers {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminarUsuario(@PathVariable Long id) {
-        usuarioservices.eliminar(id);
+    public ResponseEntity<Void> eliminarUsuario(@PathVariable String run) {
+        usuarioservices.eliminar(run);
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Usuario> actualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuarioActualizado) {
-        Usuario usuario = usuarioservices.actualizar(id, usuarioActualizado);
+    public ResponseEntity<Usuario> actualizarUsuario(@PathVariable String run,
+            @RequestBody Usuario usuarioActualizado) {
+        Usuario usuario = usuarioservices.actualizar(run, usuarioActualizado);
         return ResponseEntity.ok(usuario);
     }
 }

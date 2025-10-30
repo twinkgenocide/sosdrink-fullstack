@@ -16,9 +16,8 @@ import jakarta.persistence.ManyToOne;
 @AllArgsConstructor
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String run;
 
-    private Long id;
     private String nombre;
     private String apellidos;
     private String correo;
@@ -28,5 +27,5 @@ public class Usuario {
     @ManyToOne
     @JoinColumn(name = "tipo_usuario_id")
     private TipoUsuario tipoUsuario;
-    
+
 }
