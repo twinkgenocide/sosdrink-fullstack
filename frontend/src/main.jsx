@@ -10,6 +10,8 @@ import { ProductCatalogPage } from './pages/public/ProductCatalog/ProductCatalog
 import { Product } from './pages/public/Product/Product';
 
 import './index.css'
+import { AdminUsers } from './pages/admin/Usuarios';
+import { AdminProductos } from './pages/admin/Productos';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
         path: '/admin',
         index: true,
         element: <Saludo />
+      },
+      {
+        path: '/admin/usuarios',
+        element: <AdminUsers />
+      },
+      {
+        path: '/admin/productos',
+        element: <AdminProductos />
       }
     ]
   }
