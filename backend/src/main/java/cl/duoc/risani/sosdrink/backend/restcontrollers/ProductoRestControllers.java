@@ -9,8 +9,7 @@ import cl.duoc.risani.sosdrink.backend.services.ProductoServices;
 import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/productos")
 
@@ -37,18 +36,16 @@ public class ProductoRestControllers {
         return ResponseEntity.ok(productos);
     }
 
-  
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarProducto(@PathVariable Long id) {
         productoServices.eliminar(id);
         return ResponseEntity.noContent().build();
     }
 
-   
     @PutMapping("/{id}")
-    public ResponseEntity<Producto> actualizarProducto(@PathVariable Long id, @RequestBody Producto productoActualizado) {
+    public ResponseEntity<Producto> actualizarProducto(@PathVariable Long id,
+            @RequestBody Producto productoActualizado) {
         Producto producto = productoServices.actualizar(id, productoActualizado);
         return ResponseEntity.ok(producto);
     }
 }
-
