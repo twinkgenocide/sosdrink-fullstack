@@ -20,7 +20,7 @@
 }
 
 .tag:hover {
-    background-color: color-mix(in srgb, var(--accent-2), transparent 80%);
+    background-color: color-mix(in srgb, var(--accent-2), var(--background) 70%);
     border-color: var(--accent-2);
     color: var(--accent-2);
 }
