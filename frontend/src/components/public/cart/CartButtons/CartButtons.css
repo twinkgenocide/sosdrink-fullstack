@@ -1,0 +1,44 @@
+button.cart-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff3;
+    fill: #fffe;
+
+    transition: background-color, fill;
+    transition-duration: 150ms;
+    cursor: pointer;
+
+    position: relative;
+}
+
+button.cart-btn svg {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 10px;
+    left: 10px;
+    transform: translate(-6px, -6px);
+    fill: inherit;
+}
+
+button.cart-btn.plus:hover {
+    background-color: color-mix(in srgb, var(--accent-1), transparent 70%);
+    fill: var(--accent-1);
+}
+
+button.cart-btn.minus:hover {
+    background-color: color-mix(in srgb, var(--accent-2), transparent 70%);
+    fill: var(--accent-2);
+}
+
+button.cart-btn.cross:hover {
+    background-color: color-mix(in srgb, var(--accent-3), transparent 70%);
+    fill: var(--accent-3);
+}
