@@ -1,3 +1,5 @@
+USE sosdrink_db;
+
 INSERT INTO `categoria_blog` VALUES
 ('Productos'),
 ('Regulación'),
